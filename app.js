@@ -20,6 +20,9 @@ app.use( bodyParser.json() )
 const userssRoute = require('./api/routes/users')
 app.use('/users', userssRoute)
 
+
+
+
 // Error Handling
 app.use( (req, res) => {
     res.status(404).json( {message: 'Resource Not Found!'} )
