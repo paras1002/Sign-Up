@@ -71,8 +71,8 @@ router.patch('/:id', (req, res) => {
 router.delete('/:usersId',(req,res) =>{
     const id = req.params.usersId
     signup.remove({_id : id})
-   .then( res.status(200).json( {message: 'User deleted', info :result} ))
-   .catch
+   .then(result => res.status(200).json( {message: 'User deleted', info :result} ))
+   .catch(err => res.status(500).json( {message: 'Server Error', error: err} ))
 
 })
 
